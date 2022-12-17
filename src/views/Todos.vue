@@ -1,8 +1,14 @@
 <template>
-    <div id="app">
-        <h1>To do application</h1>
+    <div>
+        <h2>To do application</h2>
+        <router-link to="/">Home</router-link>
         <hr />
-        <router-vue />
+        <h6>Clear input field after submit</h6>
+        <h6>Fix NAN problem if index</h6>
+
+        <AddTodo @add-todo="addTodo" />
+        <hr />
+        <ToDoList v-bind:todos="todos" @remove-todo="removeTodo" />
     </div>
 </template>
 
@@ -39,14 +45,3 @@ export default {
     },
 };
 </script>
-
-<style>
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-}
-</style>
