@@ -8,7 +8,12 @@
 
         <AddTodo @add-todo="addTodo" />
         <hr />
-        <ToDoList v-bind:todos="todos" @remove-todo="removeTodo" />
+        <ToDoList
+            v-if="todos.length"
+            v-bind:todos="todos"
+            @remove-todo="removeTodo"
+        />
+        <p v-else>No todos!</p>
     </div>
 </template>
 
